@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import defaultBooks from '../defaultBooks';
+import Book from './Book';
 
 const Books = () => {
   const [bookList] = useState(JSON.parse(localStorage.getItem('books')) || defaultBooks);
@@ -14,12 +15,7 @@ const Books = () => {
           <ul>
             {bookList.map((book) => (
               <li key={book.title}>
-                <article>
-                  <span>{book.category}</span>
-                  <h1>{book.title}</h1>
-                  <data>{book.author}</data>
-                  <button type="button">Remove</button>
-                </article>
+                <Book category={book.category} title={book.title} author={book.author} />
               </li>
             ))}
           </ul>
