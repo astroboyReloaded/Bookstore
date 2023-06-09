@@ -31,8 +31,8 @@ The Bookstore is a website that allows you to:
 - Add a book
 - Remove a selected book
 
-> <br> For future implementations, please go to the [Future Features](#future-features) section. [Click here to see the Live Demo](https://astroboyreloaded.github.io/).<a name="readme-top"></a>
-
+<!-- <br> For future implementations, please go to the [Future Features](#future-features) section. [Click here to see the Live Demo](https://astroboyreloaded.github.io/).<a name="readme-top"></a>
+ -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
     <li><a href="https://www.w3.org/Style/CSS/Overview.en.html">CSS 3</a></li>
