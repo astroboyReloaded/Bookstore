@@ -29,7 +29,7 @@ const Books = () => {
           <form>
             <input type="text" placeholder="Book title" />
             <input type="text" placeholder="autor" />
-            <button type="button">ADD BOOK</button>
+            <button type="submit">ADD BOOK</button>
           </form>
         </section>
       </main>
