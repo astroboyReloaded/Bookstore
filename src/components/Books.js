@@ -1,9 +1,8 @@
-import { useState } from 'react';
-import defaultBooks from '../defaultBooks';
+import { useSelector } from 'react-redux';
 import Book from './Book';
 
 const Books = () => {
-  const [bookList] = useState(JSON.parse(localStorage.getItem('books')) || defaultBooks);
+  const { books: bookList } = useSelector((state) => state.books);
 
   return (
     <>
