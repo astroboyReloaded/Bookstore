@@ -1,8 +1,9 @@
 import { useSelector } from 'react-redux';
 import Book from './Book';
+import AddNewBook from './AddNewBook';
 
 const Books = () => {
-  const { books: bookList } = useSelector((state) => state.books);
+  const { books } = useSelector((state) => state.books);
 
   return (
     <>
@@ -12,21 +13,14 @@ const Books = () => {
       <main>
         <section>
           <ul>
-            {bookList.map((book) => (
+            {books?.map((book) => (
               <li key={book.title}>
                 <Book category={book.category} title={book.title} author={book.author} />
               </li>
             ))}
           </ul>
         </section>
-        <section>
-          <h2>ADD NEW BOOK</h2>
-          <form>
-            <input type="text" placeholder="Book title" />
-            <input type="text" placeholder="autor" />
-            <button type="submit">ADD BOOK</button>
-          </form>
-        </section>
+        <AddNewBook />
       </main>
     </>
   );

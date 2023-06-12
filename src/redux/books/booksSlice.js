@@ -28,8 +28,11 @@ const booksSlice = createSlice({
   initialState,
   reducers: {
     addBook: (state, { payload }) => ({
-      ...state,
-      books: payload,
+      ...state.books,
+      books: [
+        ...state.books,
+        payload,
+      ],
     }),
     removeBook: (state, { payload }) => ({
       ...state,
