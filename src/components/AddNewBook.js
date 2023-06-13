@@ -11,7 +11,7 @@ const AddNewBook = () => {
   const handleAddBook = (e) => {
     e.preventDefault();
     dispatch(addBook({
-      id: Date.now(),
+      item_id: Date.now().toString(),
       title: title.current.value,
       author: author.current.value,
     }));

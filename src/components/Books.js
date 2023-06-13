@@ -14,8 +14,12 @@ const Books = () => {
         <section>
           <ul>
             {books?.map((book) => (
-              <li key={book.title}>
-                <Book category={book.category} title={book.title} author={book.author} />
+              <li key={book.item_id}>
+                <Book
+                  title={book.title}
+                  author={book.author}
+                  id={book.item_id}
+                />
               </li>
             ))}
           </ul>
