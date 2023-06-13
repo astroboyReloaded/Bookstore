@@ -9,12 +9,12 @@ const AddNewBook = () => {
   const title = useRef();
   const author = useRef();
 
-  const handleAddBook = (e) => {
-    e.preventDefault();
+  const handleAddBook = () => {
     dispatch(addBook({
       item_id: Date.now().toString(),
       title: title.current.value,
       author: author.current.value,
+      category: 'any',
     }));
     title.current.value = '';
     author.current.value = '';
