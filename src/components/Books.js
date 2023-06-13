@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import defaultBooks from '../defaultBooks';
+import { useSelector } from 'react-redux';
 import Book from './Book';
+import AddNewBook from './AddNewBook';
 
 const Books = () => {
-  const [bookList] = useState(JSON.parse(localStorage.getItem('books')) || defaultBooks);
+  const { books } = useSelector((state) => state.books);
 
   return (
     <>
@@ -13,21 +13,18 @@ const Books = () => {
       <main>
         <section>
           <ul>
-            {bookList.map((book) => (
-              <li key={book.title}>
-                <Book category={book.category} title={book.title} author={book.author} />
+            {books?.map((book) => (
+              <li key={book.item_id}>
+                <Book
+                  title={book.title}
+                  author={book.author}
+                  id={book.item_id}
+                />
               </li>
             ))}
           </ul>
         </section>
-        <section>
-          <h2>ADD NEW BOOK</h2>
-          <form>
-            <input type="text" placeholder="Book title" />
-            <input type="text" placeholder="autor" />
-            <button type="submit">ADD BOOK</button>
-          </form>
-        </section>
+        <AddNewBook />
       </main>
     </>
   );
