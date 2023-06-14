@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/booksSlice';
 import Button from './Button';
@@ -9,12 +9,12 @@ const AddNewBook = () => {
   const title = useRef();
   const author = useRef();
 
-  const handleAddBook = (e) => {
-    e.preventDefault();
+  const handleAddBook = () => {
     dispatch(addBook({
       item_id: Date.now().toString(),
       title: title.current.value,
       author: author.current.value,
+      category: 'any',
     }));
     title.current.value = '';
     author.current.value = '';
