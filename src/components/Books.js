@@ -11,7 +11,6 @@ const BookList = () => {
   useEffect(() => {
     if (status !== 'idle') return;
     dispatch(fetchBooks());
-    console.log('fetch');
   }, [booksCollection, status, dispatch]);
 
   return (
