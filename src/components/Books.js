@@ -1,28 +1,29 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import { fetchBooks } from '../redux/books/booksSlice';
 import Book from './Book';
 import AddNewBook from './AddNewBook';
-import { fetchBooks } from '../redux/books/booksSlice';
 
-const Books = () => {
-  const { books } = useSelector((state) => state.books);
+const BookList = () => {
   const dispatch = useDispatch();
+  const { booksCollection, status } = useSelector((store) => store.books);
 
   useEffect(() => {
+    if (status !== 'idle') return;
     dispatch(fetchBooks());
-  }, [dispatch, books]);
+    console.log('fetch');
+  }, [booksCollection, status, dispatch]);
 
   return (
     <>
       <section>
         <h1>Books</h1>
         <ul>
-          books
-          {Object.keys(books).map((key) => (
+          {Object.keys(booksCollection).map((key) => (
             <li key={key}>
               <Book
-                title={books[key][0].title}
-                author={books[key][0].author}
+                title={booksCollection[key][0].title}
+                author={booksCollection[key][0].author}
                 id={key}
               />
             </li>
@@ -33,5 +34,4 @@ const Books = () => {
     </>
   );
 };
-
-export default Books;
+export default BookList;

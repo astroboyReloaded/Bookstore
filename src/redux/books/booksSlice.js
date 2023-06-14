@@ -1,13 +1,13 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const API_KEY = 'GKsm2r2dbIC96A74ZU29';
-const API_URL = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${API_KEY}/books`;
+const API_ID = 'NmerLOYOolwhXAVjaTow';
+const BOOKS_URL = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${API_ID}/books`;
 
 const initialState = {
-  books: [],
-  isLoading: false,
-  responseMsg: '',
+  booksCollection: [],
+  status: 'idle',
+  rspnsMsg: null,
   error: null,
 };
 
@@ -15,7 +15,7 @@ export const fetchBooks = createAsyncThunk(
   'books/fetchBooks',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios(API_URL);
+      const response = await axios(BOOKS_URL);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -25,10 +25,10 @@ export const fetchBooks = createAsyncThunk(
 
 export const addBook = createAsyncThunk(
   'books/addBook',
-  async (bookData, { rejectWithValue }) => {
+  async (payload, { rejectWithValue }) => {
     try {
-      await axios.post(API_URL, bookData);
-      return bookData;
+      await axios.post(BOOKS_URL, payload);
+      return payload;
     } catch (error) {
       return rejectWithValue(error.message);
     }
@@ -37,10 +37,10 @@ export const addBook = createAsyncThunk(
 
 export const removeBook = createAsyncThunk(
   'books/removeBook',
-  async (id, { rejectWithValue }) => {
+  async (bookId, { rejectWithValue }) => {
     try {
-      await axios.delete(`${API_URL}/${id}`);
-      return id;
+      await axios.delete(`${BOOKS_URL}/${bookId}`);
+      return bookId;
     } catch (error) {
       return rejectWithValue(error.message);
     }
@@ -54,23 +54,31 @@ const booksSlice = createSlice({
     builder
       .addCase(fetchBooks.pending, (state) => ({
         ...state,
-        isLoading: true,
+        status: 'loading',
       }))
       .addCase(fetchBooks.fulfilled, (state, { payload }) => ({
         ...state,
-        books: payload,
-        isLoading: false,
+        booksCollection: payload,
+        status: 'success',
       }))
       .addCase(fetchBooks.rejected, (state, { payload }) => ({
         ...state,
-        isLoading: false,
+        status: 'failed',
         error: payload,
       }))
-      .addCase(addBook.fulfilled || removeBook.fulfilled, (state, { payload }) => ({
+      .addCase(addBook.fulfilled, (state, { payload }) => ({
         ...state,
-        responseMsg: payload,
+        status: 'idle',
+        rspnsMsg: payload,
+      }))
+      .addCase(removeBook.fulfilled, (state, { payload }) => ({
+        ...state,
+        status: 'idle',
+        rspnsMsg: payload,
       }));
   },
 });
+
+export const { setStatus } = booksSlice.actions;
 
 export default booksSlice.reducer;
