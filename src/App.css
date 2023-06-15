@@ -5,6 +5,7 @@
   --mainBlue: #0290ff;
   --blackTxt: #121212;
   --lghtGray: #a0a0a0;
+  --border: #e8e8e8;
 }
 
 .App {
@@ -26,6 +27,7 @@
   font-family: 'Montserrat', sans-serif;
   padding-inline: 6.25rem;
   color: var(--mainBlue);
+  border-bottom: 3px solid var(--border);
 }
 
 .navLinksUl {
@@ -52,7 +54,7 @@ a:active {
 }
 
 .avatarContainer {
-  border: 1px solid var(--lghtGray);
+  border: 1px solid var(--border);
   height: 45px;
   width: 45px;
   border-radius: 50%;

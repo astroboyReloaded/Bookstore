@@ -3,10 +3,8 @@
 }
 
 .listItem {
-  padding: 2rem 1.7rem;
   list-style: none;
   margin-bottom: 1rem;
-  background-color: white;
 }
 
 li:last-child {

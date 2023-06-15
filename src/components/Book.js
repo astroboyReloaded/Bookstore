@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/booksSlice';
 import Button from './Button';
+import book from '../style/book.module.css';
 
 const Book = ({
   title,
@@ -11,7 +12,7 @@ const Book = ({
   const dispatch = useDispatch();
 
   return (
-    <article>
+    <article className={book.container}>
       <h1>{title}</h1>
       <data>{author}</data>
       <Button onClick={() => dispatch(removeBook(id))} label="Remove" />
