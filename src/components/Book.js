@@ -6,6 +6,7 @@ import Progress from './book/Progress';
 import Chapter from './book/Chapter';
 
 const Book = ({
+  category,
   title,
   author,
   id,
@@ -16,7 +17,8 @@ const Book = ({
 
   return (
     <article className={book.container}>
-      <section className={book.nameSection}>
+      <section className={book.Section}>
+        <span className={book.category}>{category}</span>
         <h1 className={book.title}>{title}</h1>
         <data className={book.author}>{author}</data>
         <div className={book.actionsContainer}>
@@ -34,6 +36,7 @@ const Book = ({
 export default Book;
 
 Book.propTypes = {
+  category: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,

@@ -8,12 +8,18 @@
   font-family: var(--Roboto);
 }
 
-.nameSection {
+.Section {
   margin-right: auto;
 }
 
+.category {
+  font-family: var(--Montse);
+  font-weight: 900;
+  color: #818181;
+}
+
 .title {
-  margin-bottom: 0;
+  margin-block: 0.6rem 0;
   font-size: 1.6rem;
 }
 
