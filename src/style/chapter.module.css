@@ -1,0 +1,23 @@
+.sectionContaier {
+  display: flex;
+  flex-direction: column;
+  min-width: 24%;
+  justify-content: space-between;
+  margin-inline: 3.68rem;
+  padding-block: 18px;
+}
+
+.sectionTitle {
+  color: var(--lghtGray);
+}
+
+.updateBtn {
+  margin: 0;
+  width: fit-content;
+  padding: 0.6rem 1.5rem;
+  background-color: var(--mainBlue);
+  border: none;
+  border-radius: 3px;
+  font-family: var(--Roboto);
+  color: white;
+}

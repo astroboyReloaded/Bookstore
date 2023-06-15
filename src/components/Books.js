@@ -4,6 +4,7 @@ import { fetchBooks } from '../redux/books/booksSlice';
 import Book from './Book';
 import AddNewBook from './AddNewBook';
 import books from '../style/books.module.css';
+import helperData from '../helperData';
 
 const BookList = () => {
   const dispatch = useDispatch();
@@ -18,12 +19,14 @@ const BookList = () => {
     <>
       <section>
         <ul className={books.list}>
-          {Object.keys(booksCollection).sort((a, b) => a - b).map((key) => (
+          {Object.keys(booksCollection).sort((a, b) => a - b).map((key, i) => (
             <li key={key} className={books.listItem}>
               <Book
                 title={booksCollection[key][0].title}
                 author={booksCollection[key][0].author}
                 id={key}
+                percent={helperData[i].precentage || 0}
+                current={helperData[i].chapter || 'Introduction'}
               />
             </li>
           ))}

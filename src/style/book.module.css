@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   border: 1px solid var(--border);
   border-radius: 4px;
   background-color: white;

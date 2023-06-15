@@ -3,11 +3,14 @@ import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/booksSlice';
 import book from '../style/book.module.css';
 import Progress from './book/Progress';
+import Chapter from './book/Chapter';
 
 const Book = ({
   title,
   author,
   id,
+  percent,
+  current,
 }) => {
   const dispatch = useDispatch();
 
@@ -22,7 +25,8 @@ const Book = ({
           <button className={book.actionBtn} type="button">Edit</button>
         </div>
       </section>
-      <Progress percent={64} />
+      <Progress percent={percent} />
+      <Chapter current={current} />
     </article>
   );
 };
@@ -33,4 +37,6 @@ Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  percent: PropTypes.number.isRequired,
+  current: PropTypes.string.isRequired,
 };
