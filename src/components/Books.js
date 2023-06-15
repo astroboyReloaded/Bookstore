@@ -16,10 +16,10 @@ const BookList = () => {
 
   return (
     <>
-      <section className={books.sectionContainer}>
-        <ul>
-          {Object.keys(booksCollection).map((key) => (
-            <li key={key}>
+      <section>
+        <ul className={books.list}>
+          {Object.keys(booksCollection).sort((a, b) => a - b).map((key) => (
+            <li key={key} className={books.listItem}>
               <Book
                 title={booksCollection[key][0].title}
                 author={booksCollection[key][0].author}

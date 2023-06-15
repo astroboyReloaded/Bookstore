@@ -30,7 +30,7 @@ const Layout = () => {
           <ImUser className="avatar" />
         </spam>
       </header>
-      <main>
+      <main className="mainContainer">
         <Outlet />
       </main>
     </>

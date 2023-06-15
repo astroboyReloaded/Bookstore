@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500;600;700;800&family=Roboto+Slab:wght@100;200;300;400;500;600;700&display=swap');
 
 :root {
-  --bg: #282c34;
+  --bg: #f5f6fa;
   --mainBlue: #0290ff;
   --blackTxt: #121212;
   --lghtGray: #a0a0a0;
@@ -66,4 +66,9 @@ a:active {
   height: 24px;
   width: 24px;
   color: var(--mainBlue);
+}
+
+.mainContainer {
+  background-color: var(--bg);
+  padding: 2.4rem 6.25rem;
 }
