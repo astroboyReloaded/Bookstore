@@ -5,7 +5,7 @@ const Progress = ({ percent }) => (
   <section className={progress.sectionContainer}>
     <div
       className={progress.chartContainer}
-      style={{ backgroundImage: `conic-gradient(#307bbe 0%, #379cf6 ${percent - 1}%, #e8e8e8 ${percent}%)` }}
+      style={{ backgroundImage: `conic-gradient(#307bbe 0%, #379cf6 ${percent}%, #e8e8e8 ${percent}%)` }}
     >
       <div className={progress.innecCir} />
     </div>
