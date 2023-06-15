@@ -1,0 +1,32 @@
+.sectionContainer {
+  display: flex;
+  align-items: center;
+  margin: 1.125rem;
+}
+
+.chartContainer {
+  width: 4.25rem;
+  height: 4.25rem;
+  border-radius: 50%;
+  padding: 9px;
+}
+
+.innecCir {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.percentContainer {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  padding: 9px 4.9rem 18px 1.3rem;
+  border-right: 2px solid var(--border);
+  font-family: var(--Montse);
+}
+
+.percent {
+  font-size: 2.2rem;
+}
