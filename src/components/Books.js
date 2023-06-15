@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { fetchBooks } from '../redux/books/booksSlice';
 import Book from './Book';
 import AddNewBook from './AddNewBook';
+import books from '../style/Books.module.css';
 
 const BookList = () => {
   const dispatch = useDispatch();
@@ -15,8 +16,7 @@ const BookList = () => {
 
   return (
     <>
-      <section>
-        <h1>Books</h1>
+      <section className={books.sectionContainer}>
         <ul>
           {Object.keys(booksCollection).map((key) => (
             <li key={key}>
