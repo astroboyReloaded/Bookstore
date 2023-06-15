@@ -1,7 +1,48 @@
 .container {
+  display: flex;
+  justify-content: end;
   border: 1px solid var(--border);
   border-radius: 4px;
   background-color: white;
   padding: 2rem 1.7rem;
-  font-family: var(--border);
+  font-family: var(--Roboto);
+}
+
+.nameSection {
+  margin-right: auto;
+}
+
+.title {
+  margin-bottom: 0;
+  font-size: 1.6rem;
+}
+
+.author {
+  color: var(--opaqueBlue);
+  font-weight: 300;
+}
+
+.actionBtn {
+  margin: 1rem 0 0 0;
+  border: none;
+  border-right: 1px solid var(--border);
+  background-color: transparent;
+  padding: 0.3rem 1.05rem;
+  font-size: 1rem;
+  font-family: var(--Roboto);
+  color: var(--opaqueBlue);
+  font-weight: 300;
+}
+
+.actionBtn:nth-child(1) {
+  padding-left: 0;
+}
+
+.actionBtn:last-child {
+  border-right: none;
+}
+
+
+.actionBtn:hover {
+  cursor: pointer;
 }

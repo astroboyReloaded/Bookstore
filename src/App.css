@@ -4,8 +4,13 @@
   --bg: #f5f6fa;
   --mainBlue: #0290ff;
   --blackTxt: #121212;
+  --opaqueBlue: #4298e2;
   --lghtGray: #a0a0a0;
   --border: #e8e8e8;
+  --Montse: 'Montserrat',
+    sans-serif;
+  --Roboto: 'Roboto Slab',
+    serif;
 }
 
 .App {
@@ -24,7 +29,7 @@
 .headerContainer {
   display: flex;
   align-items: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--Montse);
   padding-inline: 6.25rem;
   color: var(--mainBlue);
   border-bottom: 3px solid var(--border);
