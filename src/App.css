@@ -83,6 +83,7 @@ a:active {
 }
 
 .mainContainer {
+  min-height: 100vh;
   background-color: var(--bg);
   padding: 2.4rem 6.25rem;
 }

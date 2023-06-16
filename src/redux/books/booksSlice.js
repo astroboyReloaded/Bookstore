@@ -7,6 +7,7 @@ const BOOKS_URL = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bo
 const initialState = {
   booksCollection: [],
   status: 'idle',
+  isLoading: true,
   rspnsMsg: null,
   error: null,
 };
@@ -60,6 +61,7 @@ const booksSlice = createSlice({
         ...state,
         booksCollection: payload,
         status: 'success',
+        isLoading: false,
       }))
       .addCase(fetchBooks.rejected, (state, { payload }) => ({
         ...state,
