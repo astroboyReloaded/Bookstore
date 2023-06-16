@@ -15,7 +15,7 @@
 .category {
   font-family: var(--Montse);
   font-weight: 900;
-  color: #818181;
+  color: var(--grayTxt);
 }
 
 .title {

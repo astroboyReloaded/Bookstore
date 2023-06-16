@@ -18,7 +18,7 @@ const Book = ({
   return (
     <article className={book.container}>
       <section className={book.Section}>
-        <span className={book.category}>{category}</span>
+        <data className={book.category}>{category}</data>
         <h1 className={book.title}>{title}</h1>
         <data className={book.author}>{author}</data>
         <div className={book.actionsContainer}>

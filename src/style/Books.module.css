@@ -7,6 +7,6 @@
   margin-bottom: 1rem;
 }
 
-li:last-child {
-  margin-bottom: 0;
+.sectionSplit {
+  margin-top: 2.5rem;
 }

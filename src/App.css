@@ -4,6 +4,7 @@
   --bg: #f5f6fa;
   --mainBlue: #0290ff;
   --blackTxt: #121212;
+  --grayTxt: #818181;
   --opaqueBlue: #4298e2;
   --lghtGray: #a0a0a0;
   --border: #e8e8e8;
@@ -11,6 +12,10 @@
     sans-serif;
   --Roboto: 'Roboto Slab',
     serif;
+}
+
+html {
+  box-sizing: border-box;
 }
 
 .App {

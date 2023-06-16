@@ -22,17 +22,18 @@ const BookList = () => {
           {Object.keys(booksCollection).sort((a, b) => a - b).map((key, i) => (
             <li key={key} className={books.listItem}>
               <Book
-                category={defaultBooks[i].category || 'any'}
+                category={defaultBooks[i]?.category || 'Any'}
                 title={booksCollection[key][0].title}
                 author={booksCollection[key][0].author}
                 id={key}
-                percent={defaultBooks[i].precentage || 0}
-                current={defaultBooks[i].chapter || 'Introduction'}
+                percent={defaultBooks[i]?.precentage || 0}
+                current={defaultBooks[i]?.chapter || 'Introduction'}
               />
             </li>
           ))}
         </ul>
       </section>
+      <hr className={books.sectionSplit} />
       <AddNewBook />
     </>
   );
