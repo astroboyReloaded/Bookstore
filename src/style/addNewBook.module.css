@@ -1,0 +1,40 @@
+.sectionTitle {
+  font-family: var(--Montse);
+  color: var(--grayTxt);
+}
+
+.form {
+  margin-bottom: 9rem;
+  display: flex;
+}
+
+.input {
+  margin-right: 3rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  padding: 0.81rem;
+  font-family: var(--Montse);
+  font-size: 1.2rem;
+  flex-basis: 0;
+}
+
+.input::placeholder {
+  color: var(--lghtGray);
+}
+
+.addBtn {
+  flex-grow: 1;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--mainBlue);
+  font-family: var(--Roboto);
+  color: white;
+}
+
+.author {
+  flex-grow: 2;
+}
+
+.title {
+  flex-grow: 4.5;
+}

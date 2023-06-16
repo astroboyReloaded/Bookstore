@@ -1,3 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500;600;700;800&family=Roboto+Slab:wght@100;200;300;400;500;600;700&display=swap');
+
+:root {
+  --bg: #f5f6fa;
+  --mainBlue: #0290ff;
+  --blackTxt: #121212;
+  --grayTxt: #818181;
+  --opaqueBlue: #4298e2;
+  --lghtGray: #a0a0a0;
+  --border: #e8e8e8;
+  --Montse:
+    'Montserrat',
+    sans-serif;
+  --Roboto:
+    'Roboto Slab',
+    serif;
+}
+
+html {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -8,5 +30,59 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #282c34;
+  color: var(--blackTxt);
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  font-family: var(--Montse);
+  padding-inline: 6.25rem;
+  color: var(--mainBlue);
+  border-bottom: 3px solid var(--border);
+}
+
+.navLinksUl {
+  display: flex;
+  list-style: none;
+  padding-left: 3rem;
+}
+
+a {
+  padding-right: 2.7rem;
+  text-decoration: none;
+  letter-spacing: 0.12em;
+  font-weight: 400;
+  color: var(--lghtGray);
+}
+
+a:active {
+  color: var(--mainBlue);
+}
+
+.active {
+  font-weight: 500;
+  color: var(--blackTxt);
+}
+
+.avatarContainer {
+  border: 1px solid var(--border);
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+}
+
+.avatar {
+  height: 24px;
+  width: 24px;
+  color: var(--mainBlue);
+}
+
+.mainContainer {
+  background-color: var(--bg);
+  padding: 2.4rem 6.25rem;
 }

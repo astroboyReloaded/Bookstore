@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { fetchBooks } from '../redux/books/booksSlice';
 import Book from './Book';
 import AddNewBook from './AddNewBook';
+import books from '../style/books.module.css';
+import defaultBooks from '../defaultBooks';
 
 const BookList = () => {
   const dispatch = useDispatch();
@@ -16,19 +18,22 @@ const BookList = () => {
   return (
     <>
       <section>
-        <h1>Books</h1>
-        <ul>
-          {Object.keys(booksCollection).map((key) => (
-            <li key={key}>
+        <ul className={books.list}>
+          {Object.keys(booksCollection).sort((a, b) => a - b).map((key, i) => (
+            <li key={key} className={books.listItem}>
               <Book
+                category={defaultBooks[i]?.category || 'Any'}
                 title={booksCollection[key][0].title}
                 author={booksCollection[key][0].author}
                 id={key}
+                percent={defaultBooks[i]?.precentage || 0}
+                current={defaultBooks[i]?.chapter || 'Introduction'}
               />
             </li>
           ))}
         </ul>
       </section>
+      <hr className={books.sectionSplit} />
       <AddNewBook />
     </>
   );

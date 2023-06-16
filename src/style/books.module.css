@@ -1,0 +1,12 @@
+.list {
+  padding: 0;
+}
+
+.listItem {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.sectionSplit {
+  margin-top: 2.5rem;
+}

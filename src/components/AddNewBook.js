@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/booksSlice';
-import Button from './Button';
+import addNewBook from '../style/addNewBook.module.css';
 
 const AddNewBook = () => {
   const dispatch = useDispatch();
@@ -23,11 +23,11 @@ const AddNewBook = () => {
 
   return (
     <section>
-      <h2>ADD NEW BOOK</h2>
-      <form>
-        <input ref={title} type="text" placeholder="Book title" />
-        <input ref={author} type="text" placeholder="autor" />
-        <Button onClick={handleAddBook} label="ADD BOOK" />
+      <h2 className={addNewBook.sectionTitle}>ADD NEW BOOK</h2>
+      <form className={addNewBook.form}>
+        <input ref={title} type="text" className={`${addNewBook.input} ${addNewBook.title}`} placeholder="Book title" />
+        <input ref={author} type="text" className={`${addNewBook.input} ${addNewBook.author}`} placeholder="Autor" />
+        <button onClick={handleAddBook} className={addNewBook.addBtn} type="button">ADD BOOK</button>
       </form>
     </section>
   );
