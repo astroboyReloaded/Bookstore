@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { fetchBooks } from '../redux/books/booksSlice';
 import Book from './Book';
 import AddNewBook from './AddNewBook';
-// import books from '../style/books.module.css';
+import books from '../style/books.module.css';
 import defaultBooks from '../defaultBooks';
 
 const BookList = () => {
