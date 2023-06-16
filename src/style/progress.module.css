@@ -21,7 +21,6 @@
 .percentContainer {
   display: flex;
   flex-direction: column;
-  height: fit-content;
   padding: 9px 4.9rem 18px 1.3rem;
   border-right: 2px solid var(--border);
   font-family: var(--Montse);

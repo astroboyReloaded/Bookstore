@@ -19,7 +19,7 @@
 }
 
 .input::placeholder {
-  color: var(--lghtGray)
+  color: var(--lghtGray);
 }
 
 .addBtn {

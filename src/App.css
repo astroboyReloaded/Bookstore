@@ -8,9 +8,11 @@
   --opaqueBlue: #4298e2;
   --lghtGray: #a0a0a0;
   --border: #e8e8e8;
-  --Montse: 'Montserrat',
+  --Montse:
+    'Montserrat',
     sans-serif;
-  --Roboto: 'Roboto Slab',
+  --Roboto:
+    'Roboto Slab',
     serif;
 }
 
