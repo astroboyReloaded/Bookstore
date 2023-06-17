@@ -36,6 +36,7 @@ const BookList = () => {
               />
             </li>
           ))}
+          {status === 'adding book' && <Loading />}
         </ul>
       </section>
       <hr className={books.sectionSplit} />

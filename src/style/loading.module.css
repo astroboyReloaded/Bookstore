@@ -11,8 +11,18 @@
 .spinner {
   width: 50px;
   height: 50px;
+}
+
+.mount {
   border: 10px solid var(--border);
   border-top: 10px solid var(--mainBlue);
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+}
+
+.unmount {
+  border: 10px solid pink;
+  border-top: 10px solid red;
   border-radius: 50%;
   animation: spinner 1.5s linear infinite;
 }
@@ -22,4 +32,6 @@
   justify-content: center;
   align-items: center;
   height: 350px;
+
+  /* color: rgb(250, 85, 112); */
 }
