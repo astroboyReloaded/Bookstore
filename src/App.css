@@ -30,7 +30,7 @@ html {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: var(--blackTxt);
+  color: var(--grayTxt);
 }
 
 .headerContainer {
@@ -83,6 +83,7 @@ a:active {
 }
 
 .mainContainer {
+  min-height: 100vh;
   background-color: var(--bg);
   padding: 2.4rem 6.25rem;
 }

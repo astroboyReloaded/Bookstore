@@ -5,15 +5,20 @@ import Book from './Book';
 import AddNewBook from './AddNewBook';
 import books from '../style/books.module.css';
 import defaultBooks from '../defaultBooks';
+import Loading from './Loading';
 
 const BookList = () => {
   const dispatch = useDispatch();
-  const { booksCollection, status } = useSelector((store) => store.books);
+  const { booksCollection, status, isLoading } = useSelector((store) => store.books);
 
   useEffect(() => {
     if (status !== 'idle') return;
     dispatch(fetchBooks());
   }, [booksCollection, status, dispatch]);
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <>
