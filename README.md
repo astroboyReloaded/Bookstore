@@ -56,7 +56,7 @@ The Bookstore is a website that allows you to:
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Live Demo Link comming soon!
+- [Live Demo Link](https://bookstore-it69.onrender.com/)!
 
 ### Prerequisites
 
