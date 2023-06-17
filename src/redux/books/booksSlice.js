@@ -68,10 +68,18 @@ const booksSlice = createSlice({
         status: 'failed',
         error: payload,
       }))
+      .addCase(addBook.pending, (state) => ({
+        ...state,
+        status: 'adding book',
+      }))
       .addCase(addBook.fulfilled, (state, { payload }) => ({
         ...state,
         status: 'idle',
         rspnsMsg: payload,
+      }))
+      .addCase(removeBook.pending, (state) => ({
+        ...state,
+        status: 'removing book',
       }))
       .addCase(removeBook.fulfilled, (state, { payload }) => ({
         ...state,
